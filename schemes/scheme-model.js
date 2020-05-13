@@ -27,14 +27,19 @@ function findSteps(id){
 
 }
 
-function add(){
+function add(scheme){
     return db('schemes')
+    .insert(scheme)
 }
 
-function update(){
+function update(change, id){
     return db('schemes')
+    .where({ id })
+    .update(change)
 }
 
-function remove(){
+function remove(id){
     return db('schemes')
+    .where({id})
+    .del();
 }

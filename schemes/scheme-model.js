@@ -20,6 +20,10 @@ function findById(id){
 
 function findSteps(id){
     return db('schemes')
+    .join("steps", "steps.scheme_id", "schemes.id"  )
+    .select("steps.id", "schemes.scheme_name", "steps.step_number", "steps.instructions")
+    .where("schemes.id", id)
+    .orderBy("steps.step_number")
 
 }
 

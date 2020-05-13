@@ -27,6 +27,14 @@ function findSteps(id){
 
 }
 
+
+// function findSteps(id){
+//     return db('schemes as sc')
+//     .join("steps as a s", "sc.id", "s.scheme_id" )
+//     .where("s.scheme_id",id)
+    
+// }
+
 function add(scheme){
     return db('schemes')
     .insert(scheme)

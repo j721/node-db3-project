@@ -3,6 +3,6 @@ const knex = require("knex");
 const config = require("../knexfile.js");
 
 
-//switch as either development/production
+//switched to development
 
 module.exports = knex(config.development);

@@ -1,4 +1,5 @@
 // const db = require("../data/northwind.db3")
+
 const db = require("../data/db-config.js")
 module.exports = {
     find,

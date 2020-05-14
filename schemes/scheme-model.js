@@ -42,14 +42,19 @@ function add(scheme){
 }
 
 
+// function addStep(step, schemeId){
+//     return db('steps')
+//     .insert({...step, scheme_id: schemeId})
+//     .then(ids=>{
+//         const id = ids[0]
+//         return db('steps')
+//         .where({id})
+//     })
+// }
+
 function addStep(step, scheme_id){
-    return db('steps')
-    .insert({...step, scheme_id: scheme_id})
-    .then(ids=>{
-        const id = ids[0]
-        return db('steps')
-        .where({id})
-    })
+    const obj ={...step, scheme_id}
+    return db("steps").insert(obj, "id")
 }
 
 function update(change, id){

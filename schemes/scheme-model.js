@@ -59,6 +59,7 @@ function add(scheme){
 
 async function addStep(step, scheme_id){
     const newStep =await db("steps") .insert({...step, scheme_id}, "id")
+    return newStep;
 }
 
 function update(change, id){

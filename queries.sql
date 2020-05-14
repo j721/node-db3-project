@@ -11,7 +11,7 @@ on p.CategoryId = c.Id;
 -- Display the order Id and shipper CompanyName for all orders placed before August 9 2012. Shows 429 records.
 
 select o.Id, s.CompanyName
-from [Order] as o 
+from [Order] as o   --order in brackets like how sqlite editor shows in browser
     join Shipper as s 
     on o.ShipVia = s.Id
     where o.OrderDate < '2012-08-09';
@@ -29,6 +29,6 @@ order by p.ProductName
 select o.id, c.CompanyName, e.LastName
 from [Order] as o 
 join Customer as c 
-on o.CustomerId = c 
+on o.CustomerId = c.Id 
 join Employee as e 
 on o.EmployeeId = e.Id 

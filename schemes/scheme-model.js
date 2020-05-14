@@ -52,9 +52,13 @@ function add(scheme){
 //     })
 // }
 
+// async function addStep(step, scheme_id){
+//     const obj ={...step, scheme_id}
+//     return db("steps").insert(obj, "id")
+// }
+
 async function addStep(step, scheme_id){
-    const obj ={...step, scheme_id}
-    return db("steps").insert(obj, "id")
+    const newStep =await db("steps") .insert({...step, scheme_id}, "id")
 }
 
 function update(change, id){

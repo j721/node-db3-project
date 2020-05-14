@@ -52,7 +52,7 @@ function add(scheme){
 //     })
 // }
 
-function addStep(step, scheme_id){
+async function addStep(step, scheme_id){
     const obj ={...step, scheme_id}
     return db("steps").insert(obj, "id")
 }
